@@ -40,8 +40,10 @@ if (!process.env.TESTING) {
   const mountPath = process.env.PARSE_MOUNT || '/parse';
   const server = new ParseServer(config);
   await server.start();
+  console.log('por levantar servidor')
   app.use(mountPath, server.app);
 }
+console.log('servidor levantado')
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function (req, res) {

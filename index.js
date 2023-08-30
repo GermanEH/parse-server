@@ -11,10 +11,10 @@ dotenv.config()
 
 export const config = {
   databaseURI: process.env.DATABASE_URI || process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/",
-  cloud: '/cloud/main.js' || process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: 'xfgyu67k23etf' || process.env.APP_ID || 'myAppId',
   masterKey: 'fasdtq235e' || process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: 'https://parse-server-production-5bcc.up.railway.app' || process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed
+  serverURL: 'https://parse-server-production-5bcc.up.railway.app/parse' || process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed
   liveQuery: {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },

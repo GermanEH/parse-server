@@ -14,9 +14,9 @@ ENV DATABASE_URI mongodb+srv://germanhorianski:JOb5kHsCJfFARvs6@cluster0.hbzqnbu
 # ENV CLOUD_CODE_MAIN cloudCodePath
 
 # Optional (default : '/parse')
- ENV PARSE_MOUNT '/test'
+ ENV PARSE_MOUNT '/parse'
 
-EXPOSE 1338
+EXPOSE 1337
 
 # Uncomment if you want to access cloud code outside of your container
 # A main.js file must be present, if not Parse will not start

@@ -8,7 +8,7 @@ RUN npm install
 
 ENV APP_ID setYourAppId
 ENV MASTER_KEY setYourMasterKey
-ENV DATABASE_URI setMongoDBURI
+ENV DATABASE_URI mongodb+srv://germanhorianski:JOb5kHsCJfFARvs6@cluster0.hbzqnbu.mongodb.net/?retryWrites=true&w=majority
 
 # Optional (default : 'parse/cloud/main.js')
 # ENV CLOUD_CODE_MAIN cloudCodePath

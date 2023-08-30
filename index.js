@@ -15,6 +15,9 @@ export const config = {
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   masterKeyIps: ['0.0.0.0/0', '::/0'],
+  useMasterKey: true,
+  allowClientClassCreation: false,
+  allowExpiredAuthDataToken: false,
   serverURL: 'https://parse-server-production-5bcc.up.railway.app/parse' || process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed
   liveQuery: {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions

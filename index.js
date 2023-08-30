@@ -18,6 +18,7 @@ export const config = {
   liveQuery: {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },
+  masterKeyIps: ['::ffff:192.168.0.4']
 };
 console.log(config.appId, config.masterKey, config.serverURL)
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server

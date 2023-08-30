@@ -6,11 +6,13 @@ import { ParseServer } from 'parse-server';
 import path from 'path';
 const __dirname = path.resolve();
 import http from 'http';
+import dotenv from 'dotenv'
+dotenv.config()
 
 export const config = {
   databaseURI:
-    process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://localhost:27017/dev',
-  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+    process.env.DATABASE_URI || process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/',
+  // cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse', // Don't forget to change to https if needed

@@ -8,7 +8,6 @@ const __dirname = path.resolve();
 import http from 'http';
 import dotenv from 'dotenv'
 dotenv.config()
-console.log('entramos a objeto config')
 
 export const config = {
   databaseURI: process.env.DATABASE_URI || process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/",
@@ -20,33 +19,23 @@ export const config = {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },
 };
-console.log('databaseURI', config.databaseURI)
-console.log('databaseURI', config.appId)
-console.log('databaseURI', config.masterKey)
-console.log('databaseURI', config.liveQuery)
-console.log('objeto config sin errores')
+
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 export const app = express();
-console.log('servidor express configurado')
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
-console.log('ruta public')
 
 // Serve the Parse API on the /parse URL prefix
 if (!process.env.TESTING) {
-  console.log('no hay env de testing')
   const mountPath = process.env.PARSE_MOUNT || '/parse';
-  console.log('EXISTE MOUNTPATH:', mountPath)
   const server = new ParseServer(config);
   await server.start();
-  console.log('por levantar servidor')
   app.use(mountPath, server.app);
 }
-console.log('servidor levantado')
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function (req, res) {

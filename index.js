@@ -20,10 +20,10 @@ export const config = {
     classNames: ['Posts', 'Comments'], // List of classes to support for query subscriptions
   },
 };
-console.log(config.databaseURI)
-console.log(config.appId)
-console.log(config.masterKey)
-console.log(config.liveQuery)
+console.log('databaseURI', config.databaseURI)
+console.log('databaseURI', config.appId)
+console.log('databaseURI', config.masterKey)
+console.log('databaseURI', config.liveQuery)
 console.log('objeto config sin errores')
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:

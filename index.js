@@ -28,12 +28,15 @@ console.log('objeto config sin errores')
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 export const app = express();
+console.log('servidor express configurado')
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
+console.log('ruta public')
 
 // Serve the Parse API on the /parse URL prefix
 if (!process.env.TESTING) {
+  console.log('no hay env de testing')
   const mountPath = process.env.PARSE_MOUNT || '/parse';
   const server = new ParseServer(config);
   await server.start();
@@ -47,16 +50,16 @@ app.get('/', function (req, res) {
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
-app.get('/test', function (req, res) {
-  res.sendFile(path.join(__dirname, '/public/test.html'));
-});
+//app.get('/test', function (req, res) {
+  //res.sendFile(path.join(__dirname, '/public/test.html'));
+//});
 
-if (!process.env.TESTING) {
-  const port = process.env.PORT || 1337;
-  const httpServer = http.createServer(app);
-  httpServer.listen(port, function () {
-    console.log('parse-server-example running on port ' + port + '.');
-  });
+//if (!process.env.TESTING) {
+  //const port = process.env.PORT || 1337;
+  // const httpServer = http.createServer(app);
+  //httpServer.listen(port, function () {
+  //  console.log('parse-server-example running on port ' + port + '.');
+  //});
   // This will enable the Live Query real-time server
-  await ParseServer.createLiveQueryServer(httpServer);
-}
+  //await ParseServer.createLiveQueryServer(httpServer);
+//}

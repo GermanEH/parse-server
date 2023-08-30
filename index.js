@@ -38,6 +38,7 @@ console.log('ruta public')
 if (!process.env.TESTING) {
   console.log('no hay env de testing')
   const mountPath = process.env.PARSE_MOUNT || '/parse';
+  console.log('EXISTE MOUNTPATH:', mountPath)
   const server = new ParseServer(config);
   await server.start();
   console.log('por levantar servidor')

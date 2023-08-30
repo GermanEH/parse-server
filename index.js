@@ -54,6 +54,6 @@ if (!process.env.TESTING) {
   httpServer.listen(port, function () {
     console.log('parse-server-example running on port ' + port + '.');
   });
-   This will enable the Live Query real-time server
+   //This will enable the Live Query real-time server
   await ParseServer.createLiveQueryServer(httpServer);
 }
